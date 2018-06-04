@@ -16,6 +16,7 @@ RCT_EXPORT_METHOD(configure:(NSArray*)scopes
                   iosClientId:(NSString*)iosClientId
                   webClientId:(NSString*)webClientId
                   hostedDomain:(NSString*)hostedDomain
+                  loginHint:(NSString*)loginHint
                   resolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
 {
@@ -24,6 +25,7 @@ RCT_EXPORT_METHOD(configure:(NSArray*)scopes
   [GIDSignIn sharedInstance].scopes = scopes;
   [GIDSignIn sharedInstance].shouldFetchBasicProfile = YES; // email, profile
   [GIDSignIn sharedInstance].clientID = iosClientId;
+  [GIDSignIn sharedInstance].loginHint = loginHint;
   
   if (hostedDomain != nil) {
     [GIDSignIn sharedInstance].hostedDomain = hostedDomain;
