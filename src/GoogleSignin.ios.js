@@ -74,7 +74,7 @@ class GoogleSignin {
       params.iosClientId,
       params.offlineAccess ? params.webClientId : '',
       params.hostedDomain ? params.hostedDomain : null,
-      params.loginHint ? params.loginHint : '',
+      params.loginHint ? params.loginHint : null,
     ]
 
     return RNGoogleSignin.configure(...config)

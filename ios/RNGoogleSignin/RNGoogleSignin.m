@@ -27,9 +27,8 @@ RCT_EXPORT_METHOD(configure:(NSArray*)scopes
   [GIDSignIn sharedInstance].clientID = iosClientId;
 
   if (loginHint != nil) {
-    [GIDSignIn sharedInstance].loginHint = loginHint;
+    // [GIDSignIn sharedInstance].loginHint = loginHint;
   }
-  
   if (hostedDomain != nil) {
     [GIDSignIn sharedInstance].hostedDomain = hostedDomain;
   }
